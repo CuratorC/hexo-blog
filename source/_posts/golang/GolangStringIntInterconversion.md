@@ -2,8 +2,8 @@
 title: Golang中字符串和各种int类型之间的相互转换方式
 description: Golang中字符串和各种int类型之间的相互转换方式
 keywords: Golang, int, string, 格式转换
-top_img: /images/golang/GolangCover.jpg
-cover: /images/golang/GolangCover.jpg
+top_img: /images/golang/GolangCover3.png
+cover: /images/golang/GolangCover3.png
 tags:
   - Golang
   - 入门

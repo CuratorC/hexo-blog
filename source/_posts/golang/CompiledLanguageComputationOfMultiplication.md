@@ -2,11 +2,11 @@
 title: 用计算证明：我远远低估了编译器
 description: 当我使用 解释型语言PHP 进行验算 “如何使用PHP最高效率的将一个正整数扩大一千倍” 后却得出了相反的结论:只进行一次运算比进行两次计算要更快。 于是我猜测可能是 编译型语言 与 解释型语言 的差异导致的。围绕这个观点展开了论证。
 keywords: Golang, 编译器, 效率优化
-top_img: /images/golang/GolangCover.jpg
-cover: /images/golang/GolangCover.jpg
+top_img: /images/golang/GolangCover2.jpg
+cover: /images/golang/GolangCover2.jpg
 tags:
   - Golang
-  - 研讨
+  - 探讨
 categories:
   - Golang
 date: 2021-08-12 17:38:07
@@ -64,11 +64,10 @@ updated: 2021-08-12 17:38:07
 * 编译器：没想到吧崽种，我早已预判了你的预判！
 *
 要将编译器的预判囊括入我的预判，这一点`重新升格为大神的豆豆同学`也给出了方案
-
-?> 你把你博客上的代码反汇编成汇编语言，看一看，就知道为什么时间差别不大了
-
+{% note info flat %}
+你把你博客上的代码反汇编成汇编语言，看一看，就知道为什么时间差别不大了
+{% endnote %}
 但是编译器的算法早已经超出了蹒跚学步初学者的理解范畴。对于当前学习阶段的我而言，通过本次试验和讨论窥探一眼就好，看多了容易掉 SAN 值。日后若窥探到更多的内容，我会再写一篇博客出来，欢迎关注。
-
 
 ## 附录
 ### 附录代码

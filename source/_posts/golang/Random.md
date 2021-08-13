@@ -2,8 +2,8 @@
 title: GO 生成随机数
 description: 随机数，是使用一个确定性的算法计算出来随机数序。在程序开发中经常需要产生随机数，如随机数验证码登陆、作为唯一身份标识数据等等。Go 中生成随机数的有两个包,分别是 math/rand 和 crypto/rand 
 keywords: Golang, 随机数, Random
-top_img: /images/golang/GolangCover.jpg
-cover: /images/golang/GolangCover.jpg
+top_img: /images/golang/GolangCover1.png
+cover: /images/golang/GolangCover1.png
 tags:
   - Golang
   - 入门 
@@ -44,13 +44,17 @@ func Seed(seed int64)
 ```
 * 官方文档:
 
-?> Seed uses the provided seed value to initialize the default Source to a deterministic state. If Seed is not called, the generator behaves as if seeded by Seed(1). Seed values that have the same remainder when divided by 2^31-1 generate the same pseudo-random sequence. Seed, unlike the Rand.Seed method, is safe for concurrent use.
+{% note info flat %}
+Seed uses the provided seed value to initialize the default Source to a deterministic state. If Seed is not called, the generator behaves as if seeded by Seed(1). Seed values that have the same remainder when divided by 2^31-1 generate the same pseudo-random sequence. Seed, unlike the Rand.Seed method, is safe for concurrent use.
+{% endnote %}
 
 * 我的理解：
-
-?> 系统每次都会先用Seed函数初始化系统资源，如果用户不提供seed参数，则默认用seed=1来初始化，这就是为什么每次都输出一样的值的原因,而且,Seed方法是并发安全的.
+* 
+{% note info flat %}
+系统每次都会先用Seed函数初始化系统资源，如果用户不提供seed参数，则默认用seed=1来初始化，这就是为什么每次都输出一样的值的原因,而且,Seed方法是并发安全的.
 所谓种子,通俗理解可以理解为一个抽奖的奖池,我们自定义一个奖池,从我们的奖池中进行随机抽奖,种子就是我们奖池中的数据。
-
+{% endnote %}
+* 
 ### 使用种子生成随机数
 
 * 我们一般使用系统时间来进行初始化
@@ -98,4 +102,4 @@ func main() {
 }
 ```
 
-!> [转载链接](https://blog.csdn.net/study_in/article/details/102919019)
+> [转载链接](https://blog.csdn.net/study_in/article/details/102919019)

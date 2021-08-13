@@ -2,8 +2,8 @@
 title: Start Golang
 description: 下载并安装 Golang
 keywords: Golang, 下载, 安装
-top_img: /images/golang/GolangCover.jpg
-cover: /images/golang/GolangCover.jpg
+top_img: /images/golang/GolangCover4.png
+cover: /images/golang/GolangCover4.png
 tags:
   - Golang
   - 入门

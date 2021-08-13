@@ -2,11 +2,11 @@
 title: 如何使用PHP最高效率的将一个正整数扩大一千倍？
 description: 如何最高效率的将一个正整数扩大一千倍？当这个问题被抛给人脑的时候，接受过优秀的九年义务教育的我们稍加思索就能给出一个调皮而又不失大师风范的答案：添三个零就行了~但是当这个问题交给程序员用代码解决的时候，问题就要从编程的角度去考虑。
 keywords: Ubuntu, Laravel, php
-top_img: /images/php/PhpCover.png
-cover: /images/php/PhpCover.png
+top_img: /images/php/PHPCover1.png
+cover: /images/php/PHPCover1.png
 tags:
     - PHP
-    - 算法优化
+    - 探讨
 categories:
     - PHP
 date: 2021-08-12 15:42:15
@@ -93,4 +93,4 @@ $this->table($headers, $data);
 
 但是我的某个不愿透露姓名的豆豆同学对`二进制`计算模式解释的同样头头是道。我学习的是`解释型语言 php`，这意味着有一群对代码理解达到骨灰级的玩家在我看不到的地方对`php`进行了大量的算法优化。而豆豆同学学习的是`编译型语言 C++`。是不是这种解释型语言的不同点，导致了本次运算结果的不同？
 
-所以我计划对这个问题进一步挖掘，将在下一篇博文『[用计算证明：我远远低估了编译器](/go/CompiledLanguageComputationOfMultiplication.md)』中使用`编译型语言 golang`对这个课题再次进行讨论。
+所以我计划对这个问题进一步挖掘，将在下一篇博文『[用计算证明：我远远低估了编译器](/golang/CompiledLanguageComputationOfMultiplication)』中使用`编译型语言 golang`对这个课题再次进行讨论。

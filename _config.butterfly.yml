@@ -10,21 +10,23 @@ menu:
   首页: / || fas fa-home
   文章: /archives/ || fas fa-archive
   服务器||fas fa-server:
-    Ubunut: /server/ubuntu/
+    Ubunut: /categories/Ubuntu/
   数据库||fas fa-database:
-    MySQL: /database/music/
+    MySQL: /categories/MySQL/
   后台||fas fa-code:
-    PHP: /back/php/
-    Laravel: /back/laravel/
-    Golang: /back/golang/
+    PHP: /categories/PHP/
+#    Laravel: /categories/Laravel/
+    Golang: /categories/Golang/
   前端||fas fa-window-restore:
-    Vue: /front/vue/
-  客户端||fas fa-mug-hot:
-    C#: /client/cs/
-    Unity: /client/unity/
+#    Vue: /categories/Vue/
+    Web: /categories/Web/
+#  客户端||fas fa-mug-hot:
+#    C#: /categories/CS/
+#    Unity: /categories/Unity/
+  三方服务: /categories/ThreeParty || fas fa-dice-three
   项目||fas fa-umbrella-beach:
-    ggt-coder: /projects/ggt-coder/
-    ggt-sentry-white: /projects/ggt-sentry-white/
+    ggt-coder: /categories/ggt-coder/
+#    ggt-sentry-white: /categories/ggt-sentry-white/
 
 # Hide the child menu items in mobile sidebar
 hide_sidebar_menu_child: false
@@ -131,8 +133,10 @@ category_per_img:
   MySQL: /images/mysql/mysql-top-image.png
   PHP: /images/php/php-top-image.png
   Laravel: /images/laravel/laravel-top-image.png
-  Golang: /images/golang/golang-top-image.jpg
-#  Vue: /front/vue/
+  Golang: /images/golang/golang-top-image.png
+  Vue: /images/vue/vue-top-image.png
+  Web: /images/web/web-top-image.jpg
+  ThreeParty: /images/three-party/three-party-top-image.jpg
 #  C#: /client/cs/
 #  Unity: /client/unity/
 #  ggt-coder: /projects/ggt-coder/
@@ -668,7 +672,7 @@ aside:
       link: https://github.com/CuratorC
   card_announcement:
     enable: true
-    content: 任何需要请邮箱联系
+    content: 任何需要请邮箱联系：mail@curatorc.com
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all

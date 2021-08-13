@@ -2,11 +2,11 @@
 title: 位移符效率对比
 description: 以前总是看到位移符。因为它总是能轻易把一个数字变成我不认识的模样，所以我也没有深入了解过。在看到讨论区留言后才意识到：自己的格局太小了。简单读了读 位移符 的文档和实现原理，我觉得这种方案还是值得一试的。
 keywords: PHP, 位移符, 效率对比
-top_img: /images/php/PhpCover.png
-cover: /images/php/PhpCover.png
+top_img: /images/php/PHPCover2.png
+cover: /images/php/PHPCover2.png
 tags:
   - PHP
-  - 算法优化
+  - 探讨
 categories:
   - PHP
 date: 2021-08-12 16:36:13
@@ -34,35 +34,8 @@ updated: 2021-08-12 16:36:13
 ## PHP
 ### 代码部分
 
-这次吸取讨论区提到的“效率权重”，将随机数部分转移出来。代码价值较低，为不影响阅读，置于[附录](/php/DisplacementEfficiencyComparison#PHP代码)
+这次吸取讨论区提到的“效率权重”，将随机数部分转移出来。
 
-### 运算结果
-
-多次运行并且调整前后顺序，均得到一个较为稳定的结果：
-
-![image01](/images/laravel/DisplacementEfficiencyComparison01.png)
-
-这个结果在意料之中，但又不完全在。位移符`<<`从理论上来讲和一般的乘法有着本质上的不同，应该有不错的效率提升。它之所以会比`$integer * 1000`效率低，应该是被第二步运算` - $integer * 24`拖累了，但是`位移符`却也没有与`*1024`拉开差距。为了证实这一点，我又补上了单独进行位移计算的测试。结果证明：
-
-?> 位移符在`PHP`这里就仅仅是一个普通的乘除法计算而已。
-
-## GO
-### 代码部分
-代码价值较低，为不影响阅读，置于[附录](/php/DisplacementEfficiencyComparison#GO代码)
-
-### 运算结果
-
-运行结果同样不出所料。
-
-![image01](/images/laravel/DisplacementEfficiencyComparison02.png)
-
-不过横向对比一下，`PHP`的计算效率被`GO`秒的渣渣都不剩了。身为一名从`PHP`入行编程，并且现在的主要技术栈和生产能力依旧在`PHP`身上的我，不免产生一种`好可怜啊`的悲凉。
-
-?> 位移符可以帮助我们理解计算机的原理，但是在`GO`这类编译型语言这里，编译器已经帮你完成了位移符能完成的计算。
-
-## 附录
-
-### PHP代码
 ```php
 <?php
 
@@ -157,7 +130,21 @@ class DemoCommand extends Command
 
 ```
 
-### GO代码
+### 运算结果
+
+多次运行并且调整前后顺序，均得到一个较为稳定的结果：
+
+![image01](/images/php/DisplacementEfficiencyComparison01.png)
+
+这个结果在意料之中，但又不完全在。位移符`<<`从理论上来讲和一般的乘法有着本质上的不同，应该有不错的效率提升。它之所以会比`$integer * 1000`效率低，应该是被第二步运算` - $integer * 24`拖累了，但是`位移符`却也没有与`*1024`拉开差距。为了证实这一点，我又补上了单独进行位移计算的测试。结果证明：
+
+{% note info flat %}
+位移符在`PHP`这里就仅仅是一个普通的乘除法计算而已。
+{% endnote %}
+
+## GO
+### 代码部分
+
 ```go
 func main() {
 	// 计算次数
@@ -237,3 +224,14 @@ func main() {
 }
 
 ```
+### 运算结果
+
+运行结果同样不出所料。
+
+![image01](/images/php/DisplacementEfficiencyComparison02.png)
+
+不过横向对比一下，`PHP`的计算效率被`GO`秒的渣渣都不剩了。身为一名从`PHP`入行编程，并且现在的主要技术栈和生产能力依旧在`PHP`身上的我，不免产生一种`好可怜啊`的悲凉。
+
+{% note warning flat %}
+位移符可以帮助我们理解计算机的原理，但是在`GO`这类编译型语言这里，编译器已经帮你完成了位移符能完成的计算。
+{% endnote %}
