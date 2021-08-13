@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 罐罐头的工厂
+title: 罐罐头工厂
 subtitle: 罐装仙人掌CuratorC
 description: php, laravel, C#, Unity, Vue
 keywords: 博客, 罐罐头, 罐装仙人掌, 后台, 前端, C#, php, PHP, Golang, Go, golang, Unity, laravel, Laravel, Vue, Ubuntu, MySQL, mysql
@@ -143,6 +143,22 @@ githubcalendar:
   # api: https://python-gitee-calendar-api.vercel.app/api
   calendar_js: https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js
   plus_style: ""
+
+# banner
+swiper:
+  enable: true
+  priority: 2
+  enable_page: /
+  layout:
+    type: id
+    name: recent-posts
+    index: 0
+  temple_html: '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container">${temple_html_item}</div></div>'
+  plus_style: ""
+
+# 双栏
+butterfly_article_double_row:
+  enable: true
 
 # 首页时钟
 electric_clock:

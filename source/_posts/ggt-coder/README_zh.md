@@ -11,6 +11,9 @@ categories:
     - ggt-coder
 date: 2021-08-13 10:14:55
 updated: 2021-08-13 10:14:55
+swiper_index: 5
+swiper_desc: 将你从流水线式的编程中解放出来
+swiper_cover: /images/ggt-coder/ggt-coder-cover.png
 ---
 <h1 align="center">罐罐头 Coder</h1>
 <p align="center"><a href="https://github.com/CuratorC/ggt-coder-exe"><img alt="For Laravel 8" src="https://cdn.learnku.com/uploads/images/202103/10/32395/lcpvzujM5j.svg" style="max-width:100%;"></a>

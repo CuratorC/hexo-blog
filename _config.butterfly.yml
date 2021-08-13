@@ -436,8 +436,8 @@ footer:
   owner:
     enable: true
     since: 2020
-  custom_text: 世界上一切事物都可能发生改变，唯独做出选择时自己的倾向不会变。<br/><a href="https://beian.miit.gov.cn"><span>备案号：晋ICP备18007174号</span></a>
-  copyright: true # Copyright of theme and framework
+  custom_text: 愿你始终如一<br/><a href="https://beian.miit.gov.cn"><span>备案号：晋ICP备18007174号</span></a>
+  copyright: false # Copyright of theme and framework
 
 # Analysis
 # --------------------------------------

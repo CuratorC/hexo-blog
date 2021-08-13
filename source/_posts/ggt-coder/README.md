@@ -10,7 +10,7 @@ tags:
 categories:
   - ggt-coder
 date: 2021-08-13 10:13:23
-updated: 2021-08-13 10:13:23
+updated: 2021-08-13 10:13:23 
 ---
 <h1 align="center">GGT Coder</h1>
 <p align="center"><a href="https://github.com/CuratorC/ggt-coder-exe"><img alt="For Laravel 5" src="https://img.shields.io/badge/laravel-8.12-green.svg" style="max-width:100%;"></a>

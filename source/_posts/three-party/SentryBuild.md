@@ -11,6 +11,9 @@ categories:
   - ThreeParty
 date: 2021-08-13 14:46:17
 updated: 2021-08-13 14:46:17
+swiper_index: 4
+swiper_desc: 果你恰巧需要一个将每个报错上报，整理，主动推送给你的功能，那选 Sentry 准没错。
+swiper_cover: /images/three-party/ThreePartyCover2.png
 ---
 # Sentry 部署
 

@@ -11,6 +11,9 @@ categories:
     - PHP
 date: 2021-08-12 15:42:15
 updated: 2021-08-12 15:42:15
+swiper_index: 3
+swiper_desc: 由一个偶然的畅想，引发的一系列讨论
+swiper_cover: /images/php/PHPCover1.png
 ---
 # 如何使用PHP最高效率的将一个正整数扩大一千倍？
 
