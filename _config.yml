@@ -103,7 +103,10 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/CuratorC/CuratorC.github.io.git
+  branch: hexo-deploy
+  message: "hexo 自动部署"
 
 # 搜索
 algolia:
