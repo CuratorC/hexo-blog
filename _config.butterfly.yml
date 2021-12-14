@@ -44,10 +44,10 @@ code_word_wrap: true
 # copy settings
 # copyright: Add the copyright information after copied content (複製的內容後面加上版權信息)
 copy:
-  enable: false
+  enable: true
   copyright:
-    enable: false
-    limit_count: 50
+    enable: true
+    limit_count: 9999
 
 # social settings (社交圖標設置)
 # formal:
@@ -254,7 +254,7 @@ anchor: false
 noticeOutdate:
   enable: true
   style: simple # style: simple/flat
-  limit_day: 31 # When will it be shown
+  limit_day: 365 # When will it be shown
   position: top # position: top/bottom
   message_prev: 这篇上古文章出土于
   message_next: 天前，食用前请核对当前环境是否匹配。

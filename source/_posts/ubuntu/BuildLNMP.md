@@ -71,11 +71,24 @@ apt-get install mysql-server
 
 ### MySQL服务管理
 
+* 查看服务状态
 ```bash
-service mysql status # 查看服务状态
-service mysql start # 启动服务
-service mysql stop # 停止服务
-service mysql restart # 重启服务
+service mysql status
+```
+
+* 启动服务
+```bash
+service mysql start
+```
+
+* 停止服务
+```bash
+service mysql stop
+```
+
+* 重启服务
+```bash
+service mysql restart
 ```
 
 ### 登录MySQL
@@ -158,6 +171,12 @@ mv composer.phar /usr/local/bin/composer
 
 ```bash
 composer --version
+```
+
+### 更换为阿里云服务
+
+```bash
+composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 ```
 
 ## Nginx
