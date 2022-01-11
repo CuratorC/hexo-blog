@@ -8,7 +8,7 @@ tags:
   - Sentry
   - sentry-white
 categories:
-  - ServerLess
+  - sentry-white
 date: 2022-01-11 15:30:27
 updated: 2022-01-11 15:30:27
 swiper_index:
