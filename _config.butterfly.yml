@@ -17,6 +17,8 @@ menu:
     PHP: /categories/PHP/
 #    Laravel: /categories/Laravel/
     Golang: /categories/Golang/
+  Boom: /categories/Boom || fab fa-accessible-icon
+
   前端||fas fa-window-restore:
 #    Vue: /categories/Vue/
     Web: /categories/Web/

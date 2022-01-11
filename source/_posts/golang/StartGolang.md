@@ -10,7 +10,7 @@ tags:
 categories:
   - Golang
 date: 2021-08-12 16:49:48
-updated: 2021-08-12 16:49:48
+updated: 2022-01-10 16:49:48
 ---
 # Start Golang
 
@@ -25,13 +25,9 @@ updated: 2021-08-12 16:49:48
   ```bash
   go env
   ```
-* 开启 Go Module
+* 设置 GO PROXY
   ```bash
-  go env -w GO111MODULE=on
-  ```
-* 开启GOPROXY
-  ```bash
-  go env -w GO111MODULE=on
+  go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
   ```
 * 安装 Go 文档
   ```bash

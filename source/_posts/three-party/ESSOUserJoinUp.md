@@ -2,8 +2,8 @@
 title: ESSO 用户接入文档-前端手册
 description: 前端上架浙里办，需要接入 ESSO 用户体系完成验证。这个用户体系
 keywords: ESSO, 浙里办
-top_img: /images/php/PhpCover.png
-cover: /images/php/PhpCover.png
+top_img: /images/three-party/ThreePartyCover3.png
+cover: /images/three-party/ThreePartyCover3.png
 tags:
   - ESSO
   - 浙里办
@@ -31,6 +31,7 @@ updated: 2021-12-14 11:59:13
 * 在url编码前拼接登录指定地址。
   * 测试服地址：`http://essotest.zjzwfw.gov.cn/opensso/spsaehandler/metaAlias/sp?spappurl=https://gdte-api.cloudvhall.com:8443/ban/api/v1/login/esso?goto=`
   * 正式服地址：`https://esso.zjzwfw.gov.cn/opensso/spsaehandler/metaAlias/sp?spappurl=https://dea-api.idtshow.com:8443/ban/api/v1/login/esso?goto=`
+  
   ```javascript
   // 正式服地址
   // const ESSO_PREFIX = 'https://esso.zjzwfw.gov.cn/opensso/spsaehandler/metaAlias/sp?spappurl=https://dea-api.idtshow.com:8443/ban/api/v1/login/esso?goto=';
@@ -38,11 +39,31 @@ updated: 2021-12-14 11:59:13
   const ESSO_PREFIX = 'http://essotest.zjzwfw.gov.cn/opensso/spsaehandler/metaAlias/sp?spappurl=https://gdte-api.cloudvhall.com:8443/ban/api/v1/login/esso?goto=';
   let esso_url = ESSO_PREFIX + url_encode;
   ```
-  * 将跳转至拼接出来的单点登录地址。
+* 令浏览器跳转至拼接出来的单点登录地址。
   ```javascript
   location.href = esso_url;
   ```
-  
+
+## 测试账号
+* 公共测试账号：zjfrcszh
+* 公共密码：Zjfrcszh123
+
+## 登出
+
+> `ESSO`用户的登出需要分两步执行：首先解除我们后台服务器的登录状态，然后跳转`ESSO`地址解除用户登录操作。
+> `ESSO`只提供了正式服的登出操作。若在测试服中想要模拟登出操作，可在访问后台接口后关闭浏览器来完成`登出操作`。
+
+* 调用`数字展览浙里办API`提供的登出接口。
+  * [文档地址：http://docs.cloudvhall.com/sw/index.html?src=/api/dea_ban_api.yaml#/User/post_logout](http://docs.cloudvhall.com/sw/index.html?src=/api/dea_ban_api.yaml#/User/post_logout)
+
+* 使用页面跳转的方式解除`ESSO`用户系统的登录记录。
+  >登出的跳转地址生成方式类似于单点登录的生成规则，不同的是`当前url不能进行url编码操作`
+  * 正式服地址：`http://esso.zjzwfw.gov.cn/opensso/UI/Logout?goto=https://oauth.zjzwfw.gov.cn/oauth/logout.do?redirect=`
+  ```javascript
+  const ESSO_LOGOUT_PREFIX = 'http://esso.zjzwfw.gov.cn/opensso/UI/Logout?goto=https://oauth.zjzwfw.gov.cn/oauth/logout.do?redirect=';
+  location.href = ESSO_LOGOUT_PREFIX + location.href;
+  ```
+
 ## 错误处理
 * 401错误：
   * 401 错误为账户登录错误，一般是`token`过期造成的。解决方案为重新跳转单点登录地址，令用户再次完成登录操作即可。

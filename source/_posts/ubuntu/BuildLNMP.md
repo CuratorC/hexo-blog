@@ -116,7 +116,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY "password
 ```
 
 {% note info flat%}
-其他授权操作查看[这篇博客](/mysql/MySQLCreateUsersAndAuthorization)
+其他授权操作查看[这篇博客](/mysql/CreateUserAndAuthorization)
 {% endnote %}
 
 ## PHP
