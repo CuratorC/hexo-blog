@@ -42,6 +42,13 @@ swiper_cover:
   go install github.com/cosmtrek/air@latest
   ```
 
+## Godoc Go 文档系统
+
+* 安装`godoc`以快速浏览包内可用方法及释义。
+  ```bash
+  go get golang.org/x/tools/cmd/godoc
+  ```
+
 ## gcc 问题
 
 > `windows`使用`sqlite`等库时会遇到`gcc`问题，需要安装`MinGW-w64`来解决。
@@ -51,9 +58,25 @@ swiper_cover:
 
 > 完成上述所有操作后可以关闭`GoLand`令`mingw64`重新加载，之前创建的项目也可以删除。如有需要新建项目请重新打开`GoLand`继续后续操作。
 
-# 新建项目
+# 项目开发
+
+## 新建项目
 
 * 选择`Go`而不是`Go(GOPATH)`
 > Go(GOPATH)是`go 1.11`版本之前使用的模式
 * 位置为 `GOPATH + "/src/github.com/作者名称/" + 项目名称`
 * `GOPATH`和`环境变量`保持默认即可。
+
+## 调试项目
+
+* 需要额外开启两个终端，分别运行上文安装的`Air`和`godoc`
+  * 在常用终端的标题栏上右键，选择向右拆分。在右侧新增出来的终端中输入下面命令运行`Air`
+  ![向右拆分](/images/golang/UseGoLand/04.png)
+  ```bash
+  air
+  ```
+  * 新建一个2号终端，在终端中输入下面命令运行`godoc`
+  ```bash
+  godoc -http=:6060
+  ```
+* 完成上述操作后，每次编辑完代码，项目都会自动重载。需要查看文档时打开`http://localhost:6060`即可浏览文档
