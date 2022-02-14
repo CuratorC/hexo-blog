@@ -109,21 +109,21 @@ deploy:
   message: "hexo 自动部署"
 
 # 搜索
-algolia:
-  appId: "TQ0224M1FK"
-  apiKey: "77606931fcda62fdbba1c542151f7382"
-  adminApiKey: "f9bcfbf54c47815816f0e77e55d258e9"
-  chunkSize: 5000
-  indexName: "TQ0224M1FK"
-  fields:
-    - content:strip:truncate,0,500
-    - excerpt:strip
-    - gallery
-    - permalink
-    - photos
-    - slug
-    - tags
-    - title
+#algolia:
+#  appId: "TQ0224M1FK"
+#  apiKey: "77606931fcda62fdbba1c542151f7382"
+#  adminApiKey: "f9bcfbf54c47815816f0e77e55d258e9"
+#  chunkSize: 5000
+#  indexName: "TQ0224M1FK"
+#  fields:
+#    - content:strip:truncate,0,500
+#    - excerpt:strip
+#    - gallery
+#    - permalink
+#    - photos
+#    - slug
+#    - tags
+#    - title
 
 # github 统计板
 githubcalendar:
@@ -170,3 +170,9 @@ electric_clock:
     name: sticky_layout
     index: 0
   temple_html: '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img id="card-clock-loading" src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-clock/clock/images/weather/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading" class="entered loading"></div></div></div></div></div>'
+
+## 本地搜索
+#search:
+#  path: search.xml
+#  field: all
+#  content: true

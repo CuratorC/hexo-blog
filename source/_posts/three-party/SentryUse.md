@@ -13,8 +13,6 @@ date: 2021-08-13 14:38:38
 updated: 2021-08-13 14:38:38
 ---
 
-# Sentry 接入
-
 ## Laravel 项目接入步骤
 
 ### 1.使用 composer 安装插件
@@ -79,21 +77,20 @@ SENTRY_TRACES_SAMPLE_RATE=1
 
 ### 2. 配置环境变量
 
-在不同环境的`.env.js`文件中加入以下代码。
+在不同环境的`.env`文件中加入以下代码。
 
 {% note warning flat %}
 注意替换下方的 {DSN_ADDRESS}，正式服的采样率可以设置为0.2，即每5个人中只有一个人进行报错监测
 {% endnote %}
 
-```javascript
-// Sentry DSN 地址
-SENTRY_DSN = {DSN_ADDRESS}
-// 采样率
-SENTRY_TRACES_SAMPLE_RATE = 1
+```bash
+# Sentry DSN 地址
+VUE_APP_SENTRY_DSN = {DSN_ADDRESS}
+# 采样率
+VUE_APP_SENTRY_TRACES_SAMPLE_RATE = 1
 ```
 
 ### 3. 在入口文件中初始化 Sentry
-
 
   <!-- tabs:start -->
 
@@ -110,17 +107,23 @@ SENTRY_TRACES_SAMPLE_RATE = 1
 * 初始化
 
   ```javascript
+  // Sentry 初始化
   Sentry.init({
     Vue,
-    dsn: process.env.SENTRY_DSN,
-    integrations: [new Integrations.BrowserTracing()],
-
+    dsn: process.env.VUE_APP_SENTRY_DSN,
+    integrations: [
+      new BrowserTracing({
+        routingInstrumentation: Sentry.vueRouterInstrumentation(router),
+        tracingOrigins: ['localhost', 'my-site-url.com', /^\//]
+      })
+    ],
+  
     // Set tracesSampleRate to 1.0 to capture 100%
     // of transactions for performance monitoring.
     // We recommend adjusting this value in production
-    tracesSampleRate: parseInt(process.env.SENTRY_TRACES_SAMPLE_RATE ?? '0.2'),
-    environment: process.env.NODE_ENV,
-  });
+    tracesSampleRate: parseInt(process.env.VUE_APP_SENTRY_TRACES_SAMPLE_RATE ?? '0.2'),
+    environment: process.env.NODE_ENV
+  })
   ```
 
 #### **Vue3**
@@ -138,7 +141,7 @@ SENTRY_TRACES_SAMPLE_RATE = 1
   ```javascript
   Sentry.init({
     app,
-    dsn: process.env.SENTRY_DSN,
+    dsn: process.env.VUE_APP_SENTRY_DSN,
     integrations: [
       new BrowserTracing({
         routingInstrumentation: Sentry.vueRouterInstrumentation(router),
@@ -148,7 +151,7 @@ SENTRY_TRACES_SAMPLE_RATE = 1
     // Set tracesSampleRate to 1.0 to capture 100%
     // of transactions for performance monitoring.
     // We recommend adjusting this value in production
-    tracesSampleRate: parseInt(process.env.SENTRY_TRACES_SAMPLE_RATE ?? '0.2'),
+    tracesSampleRate: parseInt(process.env.VUE_APP_SENTRY_TRACES_SAMPLE_RATE ?? '0.2'),
     environment: process.env.NODE_ENV,
   });
   ```
